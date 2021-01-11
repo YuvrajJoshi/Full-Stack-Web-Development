@@ -1,0 +1,17 @@
+table,th{
+	border: 1px solid black;
+	border-collapse: collapse;
+	border-left: 0px solid;
+	border-right: 0px solid;
+}
+th{
+	text-align: left;
+}
+.headings{
+	background-color: grey;
+	padding: 5px 0px;
+}
+#centered{
+	width: 800px;
+	margin: 0 auto;
+}
