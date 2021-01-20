@@ -1,0 +1,31 @@
+#mainHeading{
+	color: #FC3004;
+	font-weight: bold;
+	padding: 0px 15px;
+}
+table{
+	border: 1px solid lightgray;
+	border-collapse: collapse;
+}
+td,th{
+	border: 1px dotted gray;
+	padding: 5px 15px;
+	text-align: center;
+}
+.maintitleColor{
+	color: #041EFC;
+}
+#titleColors{
+	color: #D604FC;
+}
+
+tr:nth-child(even){
+	background-color: lightgrey;
+}
+
+#center{
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
