@@ -1,0 +1,36 @@
+#image{
+	background-image: url('bgimage.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.mainTitle{
+		color: white;
+		text-align: center;
+		font-family: "Lucida Console", "Verdana";
+}
+.box{
+	width: 70%;
+	margin: auto;
+}
+
+.labels{
+	color: white;
+	font-family: "Lucida Console", "Verdana";
+}
+
+.inputFields{
+	color: grey;
+	font-family: "Lucida Console";
+	padding: 10px 0px 10px 3px;
+
+}
+
+.button{
+	color: white;
+	background-color: #008CBA;
+	font-family: "Lucida Console", "Verdana";
+	margin-left: 202px; 
+	width: 818px; 
+	padding: 15px 0px 15px 3px;
+}
