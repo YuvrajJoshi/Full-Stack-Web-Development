@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Javascript Hello</title>
+	</head>
+	<body>
+		First Name: <input id="fn" type="text" placeholder="Type first name here"><br>
+		Last Name: <input id="ln" type="text" placeholder="Type last name here"><br>
+		<input type="button" value="Show Message" onClick='showMessage()'> 
+	</body>
+	<script>
+		let firstname = document.getElementById("fn");
+		let lastname = document.getElementById("ln");
+		function showMessage(){
+			alert("Welcome " + firstname.value + " " + lastname.value + " to the World of Web.");
+		}
+	</script>
+</html>
