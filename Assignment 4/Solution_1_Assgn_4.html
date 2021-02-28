@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Solution 1: Change Color of Circle</title>
+		<style>
+			div{
+				margin: auto;
+				width: 300px;
+				height: 300px;
+				border : 3px solid black;
+				border-radius: 50%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="circle" onclick="changeColor()">
+		</div>
+	</body>
+
+	<script>
+		function randomColorGenerator(){
+			let hex = ['0', '1', '2','3','4','5', '6', '7', '8','9', 'a', 'b', 'c', 'd','e','f'];
+			low = 0;
+			high = 15;
+			let color = "#";
+			for(let i = 1; i <= 6; i++){
+				color += hex[Math.floor(Math.random() * (high + 1 - low) + low)]
+			}
+			return color;
+		}
+		function changeColor(){
+			let div = document.getElementById("circle");
+			div.style.backgroundColor = randomColorGenerator();
+		}
+	</script>
+</html>
