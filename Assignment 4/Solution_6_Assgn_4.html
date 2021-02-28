@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>	
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Solution 6: Bulb On/Off</title>
+</head>
+	<style>
+		#div1{
+			margin: auto;
+			width: 500px;
+			height: 500px;
+			border: 1px solid black;
+		}
+		#div2{
+			width: 20px;
+			height: 20px;
+			margin: auto;
+		}
+	</style>
+<body>
+	<div id="div1">
+		<img id="bulb" src="bulb_off.jpg" style="width: 500px; height: 500px">
+	</div>
+	<br>
+	<div id="div2">
+		<input type="button" value="SWITCH" onclick="turnOnOff()">
+	</div>
+</body>
+	<script>
+		let turnedOn = false;
+		function turnOnOff(){
+			let image = document.getElementById("bulb");
+			if(turnedOn)
+				image.src = "bulb_off.jpg";
+			else
+				image.src = "bulb_on.jpg";
+			turnedOn = !turnedOn;
+		}
+	</script>
+</html>
