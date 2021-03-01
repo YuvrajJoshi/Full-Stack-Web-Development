@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Solution 5: Random Shapes</title>
+	<style type="text/css">
+		.circle{
+			display: block !important;
+			width: 200px;
+			height: 200px;
+			border: 1px solid black;
+			border-radius: 50%;
+		}
+		.square{
+			display: block !important;
+			width: 200px;
+			height: 200px;
+			border: 1px solid black;
+		}
+		.rectangle{
+			display: block !important;
+			width: 200px;
+			height: 150px;
+			border: 1px solid black;
+		}
+		.oval{
+			width: 200px;
+			height: 100px;
+			border: 1px solid black;
+			border-radius: 100px / 50px;
+		}
+	</style>
+</head>
+<body>
+	<p id="response_time" onclick="startGame()">Click me to start!</p><br>
+	<div id="shape" onclick="setInterval(generateShape(), Math.floor(Math.random() * (1200 + 1 - 700) + 700))">
+	</div>
+</body>
+<script>
+	function startGame(){
+		document.getElementById("shape").click();
+	}
+	function randomColorGenerator(){
+			let hex = ['0', '1', '2','3','4','5', '6', '7', '8','9', 'a', 'b', 'c', 'd','e','f'];
+			low = 0;
+			high = 15;
+			let color = "#";
+			for(let i = 1; i <= 6; i++){
+				color += hex[Math.floor(Math.random() * (high + 1 - low) + low)]
+			}
+			return color;
+		}
+	function randomShapeGenerator(){
+			const shapes = ["rectangle", "square", "circle", "oval"];
+			return shapes[Math.floor(Math.random() * 4)];
+	}
+	function generateShape(){
+		let start = Date.now();
+		const div = document.getElementById("shape");
+		div.setAttribute("class", randomShapeGenerator());
+		div.style.backgroundColor = randomColorGenerator();
+		div.style.position = "absolute";
+		div.style.top = (Math.random() * (document.documentElement['clientHeight'] - 300)).toFixed() + "px";
+		div.style.left = (Math.random() * (document.documentElement['clientWidth'] - 300)).toFixed() + "px";
+		div.onclick = function(){
+			let end = Date.now();
+			let response = (end - start) / 600;
+			document.getElementById("response_time").innerHTML = `Your response time: ${response}`;
+			setInterval(generateShape(), Math.floor(Math.random() * (1200 + 1 - 700) + 700));
+		}
+	}
+</script>
+</html>
