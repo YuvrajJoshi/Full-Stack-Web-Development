@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title>Number Guessing Game</title>
+    </head>
+     <style>
+         .d1{
+             margin:0px 40px 40px 40px;
+             font-size:18; 
+             font-family:Arial, Helvetica, sans-serif;
+         }
+         .d2{
+             border:4px solid rgb(0, 217, 255);
+             border-radius:8px;
+             font-family:Arial, Helvetica, sans-serif;
+         }
+         .d5{
+             font-family:Arial, Helvetica, sans-serif;
+             background-color:rgb(255,0,0);
+             color:white;
+             
+         }
+         .d6{
+             border:1px solid rgb(20, 20, 20);
+             border-radius:8px;
+             font-family:Arial, Helvetica, sans-serif;
+             visibility:hidden;
+             }
+     </style>
+     <script>
+         v=1;
+         l=1+Math.floor(Math.random()*100);
+         
+         function gen()
+         {  
+            y=document.getElementsByClassName("d3")[0].value;
+            temp=parseInt(y);
+            f=document.getElementsByClassName("d5");
+            if(v++<=10){
+                
+                if(temp==l)
+                {
+                    f[0].style.backgroundColor="rgb(0,255,0)";
+                    f[0].innerHTML="Congratulations!You got it right!";
+                    document.getElementsByClassName("d2").disabled=true;
+                    document.getElementsByClassName("d6")[0].style.visibility="visible";
+                }
+                else
+                {   
+                    diff=Math.abs(l-temp);
+                    if(diff>20)
+                    {   
+                        f[0].style.backgroundColor="rgb(255,0,0)";
+                        if(l>temp)
+                            f[0].innerHTML="Wrong!Your previous guess is too low!";
+                        else 
+                            f[0].innerHTML="Wrong!Your previous guess is too high!";
+                    }
+                    else if(diff>=10&&diff<=20){
+                      f[0].style.backgroundColor="rgb(255,165,0)";
+                      f[0].innerHTML="Wrong!But your previous guess is close!";}
+                    else{
+                        f[0].style.backgroundColor="rgb(231,14,159)";
+                        f[0].innerHTML="Wrong!But your previous guess is really close!";
+                    }
+                }
+                document.getElementsByClassName("d4")[0].innerHTML+=y.toString()+" ";
+                document.getElementsByClassName("d3")[0].value="";
+            }
+            else
+            {
+               
+                f[0].style.backgroundColor="rgb(160,160,160)";
+                f[0].innerHTML="Sorry,out of turns. Click button below to start new game";
+                document.getElementsByClassName("d2").disabled=true;
+                document.getElementsByClassName("d6")[0].style.visibility="visible";
+            }
+          }
+     </script>
+    <body>
+        <div class="d1" >
+        <h1><b>Number Guessing Game</b></h1>
+        <p>We have selected a random number between 1 and 100.See if you<br>can guess it in 
+        10 turns or fewer.We'll tell you if your guess was too<br> high or too low</p>
+        <form>
+            Enter a guess: <input class="d3" style="border:1px solid black" type="text">
+            <button class="d2" type="button" onClick="gen()">Submit Guess</button><br>
+            <p class="d4">Previous Guesses:</p>
+            <p class="d5"></p>
+            <input type="button"  class="d6" value="Start New Game" onclick="location.reload()">
+        </form>
+    </div>
+    </body>
+</html>
